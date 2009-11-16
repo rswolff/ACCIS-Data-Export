@@ -43,7 +43,7 @@ FROM appointment
 
 WHERE appointment.year = '2009' and appointment.month = '7'
 AND appointment.type IN ('F/U Knee', 'F/U Hip', 'Initial Hip', 'Initial Knee', 'Teaching Class') -- this filters out only central intake patient types.  Not the best way to do this, but the only working way we have
-AND appointment.physician_id IN (67516, 7229, 7214, 3518, 7199, 643, 7460) -- physician_id's for Paul Duffy Allan McDonald, Donna Shewchuck, Stephen Miller, Ed Rendall, Brian Burkart and Dr. Case Manager
+AND appointment.physician_id IN (7414, 7229, 7214, 3518, 7199, 643, 7460) -- physician_id's for Paul Duffy Allan McDonald, Donna Shewchuck, Stephen Miller, Ed Rendall, Brian Burkart and Dr. Case Manager
 
 ORDER BY appointment.day, appointment.physician_id, appointment.start_time
 
