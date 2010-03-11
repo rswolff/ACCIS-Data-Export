@@ -1,3 +1,8 @@
+DECLARE @year     int
+DECLARE @month    int
+SET @year = 2010
+SET @month = 2
+
 USE Medadmin
 select
 	-- appointment.type,
@@ -41,7 +46,7 @@ FROM appointment
 	INNER JOIN physician on appointment.physician_id = physician.physician_id
 	INNER JOIN person as person_1 on physician.person_id = person_1.person_id
 
-WHERE appointment.year = '2009' and appointment.month = '7'
+WHERE appointment.year = @year and appointment.month = @month
 AND appointment.type IN ('F/U Knee', 'F/U Hip', 'Initial Hip', 'Initial Knee', 'Teaching Class') -- this filters out only central intake patient types.  Not the best way to do this, but the only working way we have
 AND appointment.physician_id IN (7414, 7229, 7214, 3518, 7199, 643, 7460) -- physician_id's for Paul Duffy Allan McDonald, Donna Shewchuck, Stephen Miller, Ed Rendall, Brian Burkart and Dr. Case Manager
 
