@@ -1,7 +1,7 @@
 DECLARE @year     int
 DECLARE @month    int
 SET @year = 2010
-SET @month = 2
+SET @month = 3
 
 USE Medadmin
 select
@@ -48,7 +48,7 @@ FROM appointment
 
 WHERE appointment.year = @year and appointment.month = @month
 AND appointment.type IN ('F/U Knee', 'F/U Hip', 'Initial Hip', 'Initial Knee', 'Teaching Class') -- this filters out only central intake patient types.  Not the best way to do this, but the only working way we have
-AND appointment.physician_id IN (7414, 7229, 7214, 3518, 7199, 643, 7460) -- physician_id's for Paul Duffy Allan McDonald, Donna Shewchuck, Stephen Miller, Ed Rendall, Brian Burkart and Dr. Case Manager
+AND appointment.physician_id IN (7414, 7229, 7214, 3518, 7199, 643, 7460, 6645, 3156, 11) -- physician_id's for Paul Duffy Allan McDonald, Donna Shewchuck, Stephen Miller, Ed Rendall, Brian Burkart and Dr. Case Manager, Cory Cundal, Mackenzie, Gregory Abelseth
 
 ORDER BY appointment.day, appointment.physician_id, appointment.start_time
 
